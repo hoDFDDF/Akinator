@@ -1,0 +1,12 @@
+digraph tree{
+    charset="UTF-8";
+    bgcolor="#001f29";
+    rankdir = TB;
+    nodesep = 0.5;
+    ranksep = 0.7;
+    node [shape=plaintext, style=filled, fontname="Arial"];
+    edge [fontname="Arial"];
+
+    labelloc="t";
+    node0000020ae5b29b30 [label=<<TABLE BORDER='1' CELLBORDER='1' CELLSPACING='0'><TR><TD COLSPAN='2'>add: 0000020ae5b29b30</TD></TR><TR><TD COLSPAN='2'>data: Govno</TD></TR><TR><TD>NO</TD><TD>YES</TD></TR><TR><TD>0000000000000000</TD><TD>0000000000000000</TD></TR></TABLE>>, fillcolor="#5f3035", color="#fdfdfd", fontcolor="#fdfdfd"];
+ { rank = same;node0000020ae5b29b30}}
