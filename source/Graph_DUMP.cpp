@@ -68,8 +68,8 @@ void MakeArrow(Node_t* node, Tree_t* tree, FILE* dot_file){
     }
     
     // Рекурсия для потомков
-    MakeArrow(node->left_child, tree, dot_file);
-    MakeArrow(node->right_child, tree, dot_file);
+   // MakeArrow(node->left_child, tree, dot_file);
+    //MakeArrow(node->right_child, tree, dot_file);
 }
 
 

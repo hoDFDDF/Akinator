@@ -1,21 +1,30 @@
 #include "TreeRead.h"
 #include "tree.h"
 
-void ReadDataFromFile(TreeFile* text_tree, FILE* tree_file_ptr){
+void ReadDataFromFile(TreeFile* text_tree, FILE* tree_file_ptr, Tree_t* tree){
     assert(text_tree != nullptr);
-
-    text_tree->buffer = (char**)calloc(1 ,sizeof(char*));
+    assert(tree != nullptr);
 
     char temp_buffer_data[MAX_LENGHT_OF_TEMP_BUFFER];
-
     char* tree_file_string = fgets(temp_buffer_data, MAX_LEGHT_OF_DATA, tree_file_ptr);    
     
-    if (tree_file_string != nullptr) {
-        text_tree->buffer = &tree_file_string;
+    if (tree_file_string == nullptr) {
+        printf("ERROR: Failed to read from file\n");
+        return;
     }
     
-    NodeParse(text_tree->buffer);  
-} 
+    printf("Read string: %s\n", tree_file_string);  // ДЕБАГ
+    
+    // Парсим дерево
+    char* str_ptr = tree_file_string;
+    tree->root = NodeParse(&str_ptr);  
+    
+    if (tree->root == nullptr) {
+        printf("ERROR: Failed to parse tree from file\n");
+    } else {
+        printf("Tree parsed successfully. Root: %s\n", tree->root->tree_data);
+    }
+}
 
 Node_t* NodeParse(char** tree_str){
 
@@ -64,9 +73,9 @@ Node_t* NodeParse(char** tree_str){
         
         while (**tree_str == ' ') (*tree_str)++;
         
-        if (**tree_str != ')') {
+        //if (**tree_str != ')') {
             node->right_child = NodeParse(tree_str);
-        }
+        //}
     }
     
     if (**tree_str == ')') {

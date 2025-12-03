@@ -18,6 +18,7 @@
         "xlocale": "cpp",
         "xstring": "cpp",
         "xutility": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "cassert": "cpp"
     }
 }

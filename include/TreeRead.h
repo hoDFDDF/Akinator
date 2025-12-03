@@ -15,7 +15,7 @@ struct TreeFile{
     size_t buff_lenght;
 };
 
-void ReadDataFromFile(TreeFile* text_tree, FILE* tree_file_ptr);
+void ReadDataFromFile(TreeFile* text_tree, FILE* tree_file_ptr, Tree_t* tree);
 Node_t* NodeParse(char** tree_str);
 
 #endif //_GET_STRING_PARAM_

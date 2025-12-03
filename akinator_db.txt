@@ -1,0 +1,2 @@
+# Akinator Database
+# Total nodes: 12
