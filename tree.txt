@@ -1,1 +1,1 @@
-(Animal (People (Flower (fruit (blondinka (RT )(Woman ))(apple ))(Purple (Rose )(Lilia )))(Teach Matan (Ded )(Lunina )))(blue (pink (Home Animal (Frog )(dog ))(Flamingo ))(small (Kit )(fish ))))
+(Animal (People (Flower (fruit (blondinka (RT nil nil)(Woman nil nil))(apple nil nil))(Purple (Rose nil nil)(Lilia nil nil)))(Teach_Matan (Ded nil nil)(Lunina nil nil)))(blue (pink (Home_Animal (Frog nil nil)(dog nil nil))(Flamingo nil nil))(small (Kit nil nil)(fish nil nil))))

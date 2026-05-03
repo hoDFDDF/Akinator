@@ -34,24 +34,12 @@ typedef struct {
     int length;      // Длина пути (количество узлов)
 } PathResult;
 
-// ========== ОСНОВНЫЕ ФУНКЦИИ АКИНАТОРА ==========
 
-// Угадывание объекта
 void GuessObject(Node_t* node);
-
-// Добавление нового объекта
 void AddNewObject(Node_t* current_node);
-
-// Описание объекта (вывод всех признаков)
 void DescribeObject(Tree_t* tree, const char* object_name);
-
-// Сравнение двух объектов
 void CompareObjects(Tree_t* tree);
-
-// Вывод информации об объекте
-void PrintObjectInfo(Tree_t* tree, const char* object_name);
-
-// Показать статистику дерева
+void PrintObjectInfo(Tree_t* tree, const char* object_name);а
 void ShowStatistics(Tree_t* tree);
 
 // ========== ФУНКЦИИ МЕНЮ И ИНТЕРФЕЙСА ==========

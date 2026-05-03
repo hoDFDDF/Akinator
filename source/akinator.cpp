@@ -4,9 +4,6 @@
 #include <cstring>
 #include <cassert>
 
-// ========== ОСНОВНЫЕ ФУНКЦИИ АКИНАТОРА ==========
-
-// Получение ответа пользователя
 UserAnswer GetUserAnswer() {
     char answer[MAX_OBJECT_NAME];
     
@@ -27,7 +24,6 @@ UserAnswer GetUserAnswer() {
     }
 }
 
-// Основная функция угадывания
 void GuessObject(Node_t* node) {
     assert(node != nullptr);
 
@@ -55,7 +51,6 @@ void GuessObject(Node_t* node) {
     }
 }
 
-// Добавление нового объекта
 void AddNewObject(Node_t* current_node) {
     printf("What were you thinking of?\n");
     
@@ -67,14 +62,12 @@ void AddNewObject(Node_t* current_node) {
     char difference[MAX_OBJECT_NAME];
     GetLineWithPrompt("Enter difference: ", difference, sizeof(difference));
     
-    // Сохраняем старые данные
     char* old_object = strdup(current_node->tree_data);
     
-    // Обновляем текущий узел
     free((void*)current_node->tree_data);
     current_node->tree_data = strdup(difference);
     
-    // Создаем детей
+
     current_node->left_child = (Node_t*)calloc(1, sizeof(Node_t));
     if (current_node->left_child) {
         current_node->left_child->tree_data = strdup(old_object);
@@ -93,7 +86,6 @@ void AddNewObject(Node_t* current_node) {
     printf("Thanks! I've learned something new!\n");
 }
 
-// Вывод информации об объекте
 void PrintObjectInfo(Tree_t* tree, const char* object_name) {
     PathResult path = FindPathToNode(tree->root, object_name);
     
@@ -122,7 +114,6 @@ void PrintObjectInfo(Tree_t* tree, const char* object_name) {
     free(path.path);
 }
 
-// Определение объекта (вывод всех признаков)
 void DescribeObject(Tree_t* tree, const char* object_name) {
     PathResult path = FindPathToNode(tree->root, object_name);
     
@@ -146,7 +137,7 @@ void DescribeObject(Tree_t* tree, const char* object_name) {
     free(path.path);
 }
 
-// Сравнение двух объектов
+
 void CompareObjects(Tree_t* tree) {
     char obj1[MAX_OBJECT_NAME], obj2[MAX_OBJECT_NAME];
     
@@ -181,7 +172,6 @@ void CompareObjects(Tree_t* tree) {
         }
     }
     
-    // Выводим различия
     printf("\nDIFFERENCES:\n");
     
     printf("\n%s:\n", obj1);
@@ -240,7 +230,6 @@ void PrintGameMenu() {
     printf("Choose action: ");
 }
 
-// Обработка меню игры
 void GameMenuProcessing(Tree_t* tree) {
     AkinatorMode mode = UNKNOWNMODE;
     bool exit_requested = false;
@@ -419,8 +408,6 @@ void ClearInputBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
-
-// ========== ФУНКЦИИ РАБОТЫ С ДЕРЕВОМ ==========
 
 // Поиск узла по имени объекта
 Node_t* TreeSearch(Node_t* node, const char* object) {

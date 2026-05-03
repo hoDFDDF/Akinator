@@ -6,7 +6,6 @@
 
 #include "tree.h"
 
-
 void DrawTree(Tree_t* tree, Node_t* node, FILE* dot_file);
 void CreateNode(Node_t* node, FILE* dot_file, Tree_t* tree);
 void MakeArrow(Node_t* node, Tree_t* tree, FILE*  dot_file);

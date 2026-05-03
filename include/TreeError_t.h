@@ -1,5 +1,6 @@
 #ifndef _TREE_ERRORS_H_
 #define _TREE_ERRORS_H_
+
 enum TreeError_t{
 
     TREE_VERIFIDE                         = 0,
